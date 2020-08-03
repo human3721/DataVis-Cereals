@@ -141,7 +141,7 @@ function removeOptions(selectElement) {
 
 //select manufactor
 function select_mfr(selectedGroup) {
-	d3.csv('https://raw.githubusercontent.com/human3721/DataVis-CuckooEgg/master/cereal.csv', function(dd){
+	d3.csv('https://raw.githubusercontent.com/human3721/DataVis-Cereals/master/cereal.csv', function(dd){
     // Create new data with the selection
     var dataFilted = dd.filter(function(d){return d.mfr==selectedGroup})
     
@@ -182,7 +182,7 @@ d3.select("#selectButton").on("change", function(d) {
         console.log(selectedOption);    
         d3.select("#barChart").select("svg").remove();
       	//read data
-		d3.csv('https://raw.githubusercontent.com/human3721/DataVis-CuckooEgg/master/cereal.csv', function(dd2){
+		d3.csv('https://raw.githubusercontent.com/human3721/DataVis-Cereals/master/cereal.csv', function(dd2){
       		// Create new data with the selection
         	var dataFilted2 = dd2.filter(function(d){return d.name==selectedOption});
             
@@ -300,7 +300,7 @@ d3.select("#selectButton2").on("change", function(d) {
     var selectedOption2 = d3.select(this).property("value");
     console.log(selectedOption2);
     //read data
-    d3.csv('https://raw.githubusercontent.com/human3721/DataVis-CuckooEgg/master/cereal.csv', function(dd5){
+    d3.csv('https://raw.githubusercontent.com/human3721/DataVis-Cereals/master/cereal.csv', function(dd5){
         if (selectedOption2 == "calories") {
             var dd6 = dd5.map(function(d) { return {value: d.calories} ;});
         } else if (selectedOption2 == "protein (g)") {
